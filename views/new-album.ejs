@@ -1,0 +1,40 @@
+<% include ./layouts/header.ejs %>
+    <br>
+  <div class="container text-center "> 
+    <%if(msg!== null){%>
+      <div class="alert alert-<%=type%>" role="alert">
+          <%= typeof msg != 'undefined' ? msg : '' %>
+      </div>
+    <%}%>
+    <form action="/album/new" method="POST"  class="container" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col">
+                <!-- Irai Alaigal -->
+                <label for="">Album Name</label>
+                <input type="text" class="form-control" placeholder="Album Name" name="AName" required>
+            </div>
+            <div class="col">
+                <!-- Fr. Agilan SDB -->
+                <label for="">Album Artist</label>
+                <input type="text" class="form-control" placeholder="Album Artist" name="AArtist" required>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="">Other Artists</label>
+          <textarea name="o_artist" cols="4" rows="2" class="form-control"></textarea>
+        </div>
+        <br>
+        <div class="input-group mb-3">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="input" name="img" accept="image/*" required>
+          <label class="custom-file-label" for="input" >Choose Cover Image</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </form>
+    <br>
+  </div>
+
+</body>
+</html>

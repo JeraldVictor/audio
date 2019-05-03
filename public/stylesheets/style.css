@@ -1,0 +1,27 @@
+body {
+  background: #e9ecef;
+  color: black;
+}
+img{
+  width: 150px;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  color: black;
+  text-decoration: none;
+}
+.active{
+  color: black;
+  font-weight: bolder;
+}
+.song{
+  background: white;
+  padding: 10px;
+}
+.al-lef{
+  margin-left: 5%;
+  text-align: left;
+}

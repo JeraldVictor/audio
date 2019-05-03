@@ -1,0 +1,19 @@
+<% include ./layouts/header.ejs %>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <%for(var i=0;i<album.length;i++){%>
+                    <div class="col">
+                        <a href="/audio/lists/<%=album[i].id%>">
+                            <div class="album text-center">
+                                <img src="/media/images/<%=album[i].cover%>" class="rounded">
+                                <p><strong><%=album[i].name%></strong></p>
+                            </div>
+                        </a>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

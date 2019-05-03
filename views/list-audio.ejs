@@ -1,0 +1,40 @@
+<% include ./layouts/header.ejs %>
+      <br>
+  <div class="container text-center">
+    <h1>Audio In Album</h1>
+    <br>
+    <%if(msg!== null){%>
+      <div class="alert alert-<%=type%>" role="alert">
+          <%= typeof msg != 'undefined' ? msg : '' %>
+      </div>
+    <%}%>
+    <br>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Song Name</th>
+          <th scope="col">View</th>
+          <th scope="col">Delet Link</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% for(let i = 0 ; i < list.length ; i++ ){%>
+        <tr>
+          <th scope="row"><%=i+1%></th>
+          <td><%=list[i].name%></td>
+          <td>
+            <a href="/audio/viewer/<%=list[i].id%>" class="btn btn-success">View</a>
+          </td>
+          <td>
+              <form method="POST" action="/audio/<%=list[i].id%>?_method=DELETE">
+                  <button class="btn btn-danger" type="submit">Delete</button>
+              </form>
+          </td>
+        </tr>
+      <%}%>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
